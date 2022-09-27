@@ -310,7 +310,7 @@ class _SignUpState extends State<SignUp> {
                       onTap: () {},
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(100.0),
-                        child: Image.asset('assets/images/google.jpg',
+                        child: Image.asset('assets/images/google1.png',
                             width: 60.0, height: 60.0),
                       ),
                     ),

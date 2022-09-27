@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:ug_radio_app/Intro_Sliders/all_intro.dart';
+import 'package:ug_radio_app/Intro_Sliders/dot_view.dart';
 
 import '../Intro_Sliders/intro_slider1.dart';
 

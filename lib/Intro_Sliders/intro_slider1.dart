@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ug_radio_app/Intro_Sliders/intro_slider_2.dart';
 
 class Intro_Slider1 extends StatelessWidget {
-  const Intro_Slider1({Key? key}) : super(key: key);
+  PageController _pageController= new PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +35,12 @@ class Intro_Slider1 extends StatelessWidget {
                   ),
                 ),
               ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(40, 235, 40, 0),
+              Column(children: [
+              Padding(
+              padding: const EdgeInsets.fromLTRB(40, 220, 40, 0),
               child: new Container(
                 height: 200.0,
+                width: 500,
                 color: Colors.transparent,
                 child: new Container(
                   decoration: new BoxDecoration(
@@ -53,7 +55,7 @@ class Intro_Slider1 extends StatelessWidget {
                     new Padding(
                       padding: EdgeInsets.all(20),
                       child: Center(
-                        child: new Text(
+                        child: Text(
                           "Create Account, listen and Support !",
                           style: GoogleFonts.roboto(
                               fontSize: 14,
@@ -97,14 +99,15 @@ class Intro_Slider1 extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ]),
+                  ]
+                  ),
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
+      ],
+
+    ),
+                    ],
         ),
       ),
     );

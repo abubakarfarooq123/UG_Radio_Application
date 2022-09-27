@@ -37,7 +37,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: any
   font_awesome_flutter: any
-  intro_slider: any
+  smooth_page_indicator: any
+  introduction_screen: any
+  page_indicator: any
+  bottom_navy_bar: any
+  audioplayers: any
+  file_picker: any
+  carousel_slider: ^4.1.1
+
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +72,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/sounds/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
