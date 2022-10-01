@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ug_radio_app/Home/home.dart';
 import 'package:ug_radio_app/Library/library_home.dart';
 import 'package:ug_radio_app/Noti/notification.dart';
+import 'package:ug_radio_app/Record/chipz_lab.dart';
 import 'package:ug_radio_app/Record/mic.dart';
 import 'package:ug_radio_app/User/profile.dart';
 
@@ -32,7 +33,6 @@ class _homeNavBarState extends State<homeNavBar> {
   Widget build(BuildContext context) {
   return Scaffold(
     resizeToAvoidBottomInset: false,
-
     body: PageStorage(
       child: currentScreen,
       bucket: bucket,
@@ -48,7 +48,149 @@ class _homeNavBarState extends State<homeNavBar> {
         ),
       ),
       onPressed: (){
+    showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),),
+        child: Container(
+          width: 400,
+          height: 300,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+              image: DecorationImage(
+                  image: ExactAssetImage('assets/images/record.jpg'),
+                  fit: BoxFit.fill,
+              )
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
+                child: InkWell(
+                  onTap: (){},
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child:  Row(
+                        children: [
+                    Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Image.asset(
+                        "assets/images/upload.jpg",
+                        height: 40,
+                        width: 40,
+                      ),
+                    ),
+                  ),
+                          SizedBox(
+                            width: 50,
+                          ),
+                          Text(
+                            "Upload Music",
+                          style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                          ),
+          ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30,left: 10,right: 10),
+                child: InkWell(
+                  onTap: (){},
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child:  Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Image.asset(
+                              "assets/images/video.jpg",
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        Text(
+                          "Upload Video",
+                          style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30,left: 10,right: 10),
+                child: InkWell(
+                  onTap: (){
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Chipz_Lab()));
+                  },
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child:  Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100),
+                            child: Image.asset(
+                              "assets/images/music.jpg",
+                              height: 40,
+                              width: 40,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+                        Text("Create Music",
+                          style: GoogleFonts.roboto(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
 
+            ],
+          ),
+        ),
+      );
+    },
+          );
       },
     ),
     floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

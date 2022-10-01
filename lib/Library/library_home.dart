@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ug_radio_app/Home/active_contest.dart';
 
 class Library extends StatefulWidget {
   const Library({Key? key}) : super(key: key);
@@ -126,7 +127,7 @@ class _LibraryState extends State<Library> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top:10, left: 20),
+                padding: const EdgeInsets.only(top: 10, left: 20),
                 child: Row(
                   children: [
                     Text(
@@ -137,9 +138,14 @@ class _LibraryState extends State<Library> {
                         fontSize: 14,
                       ),
                     ),
-                    SizedBox(width: 95),
+                    SizedBox(width: 100),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Active_Contest()));
+                      },
                       child: Text(
                         "See More >",
                         style: GoogleFonts.roboto(
@@ -237,47 +243,47 @@ class _LibraryState extends State<Library> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20,right: 270),
-                child: Text("Author",
+                padding: const EdgeInsets.only(top: 20, right: 270),
+                child: Text(
+                  "Author",
                   style: GoogleFonts.roboto(
-                  color: Colors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold
-                ),),
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: Color(0xffFDCF09),
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage("assets/images/p3.jpg"),
-                      ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Color(0xffFDCF09),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("assets/images/p3.jpg"),
                     ),
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: Color(0xffFDCF09),
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage("assets/images/p2.jpg"),
-                      ),
+                  ),
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Color(0xffFDCF09),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("assets/images/p2.jpg"),
                     ),
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: Color(0xffFDCF09),
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundImage: AssetImage("assets/images/p1.png"),
-                      ),
+                  ),
+                  CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Color(0xffFDCF09),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("assets/images/p1.png"),
                     ),
-
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

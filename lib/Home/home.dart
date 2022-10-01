@@ -163,7 +163,7 @@ List<String> _images=[
               ),
               Container(
                 width: 300,
-                height: 290,
+                height: 275,
                 child: TabBarView(
                   controller: _tabController,
                   children: [
@@ -427,7 +427,7 @@ List<String> _images=[
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 55,
               ),
               Center(
                 child: Text(

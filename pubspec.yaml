@@ -44,6 +44,7 @@ dependencies:
   audioplayers: any
   file_picker: any
   carousel_slider: ^4.1.1
+  flutter_inset_box_shadow: any
 
 
 dev_dependencies:

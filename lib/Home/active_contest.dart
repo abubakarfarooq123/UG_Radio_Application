@@ -199,7 +199,7 @@ class _Active_ContestState extends State<Active_Contest> {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 60,
               ),
               Container(
                 child:
