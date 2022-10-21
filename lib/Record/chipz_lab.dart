@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ug_radio_app/Record/recording.dart';
 import 'package:ug_radio_app/Record/save.dart';
 class Chipz_Lab extends StatefulWidget {
   const Chipz_Lab({Key? key}) : super(key: key);
@@ -138,144 +139,204 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                mainAxisAlignment: MainAxisAlignment.start,
                crossAxisAlignment: CrossAxisAlignment.start,
                children: [
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 20),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/west.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 20),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/west.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("West Coast",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                       fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("West Coast",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                         fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 30),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/tap.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 30),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/tap.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("Boombap",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("Boombap",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 40),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/rap.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 40),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/rap.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("Gangsta",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("Gangsta",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 40),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/class.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 40),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/class.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("Classic",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("Classic",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 40),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/west.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 40),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/west.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("West Coast",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("West Coast",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 40),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/rap.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 40),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/rap.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("Gangsta",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(height: 10,),
+                         Text("Gangsta",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
-                 Padding(
-                   padding: const EdgeInsets.only(top: 10,left: 40),
-                   child: Column(
-                     children: [
-                       ClipRRect(
-                         borderRadius: BorderRadius.circular(100),
-                         child: Image.asset(
-                           "assets/images/class.jpg",
-                           height: 60,
-                           width: 60,
+                 InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(
+                         context,
+                         MaterialPageRoute(
+                             builder: (context) => Record()));
+                   },
+                   child: Padding(
+                     padding: const EdgeInsets.only(top: 10,left: 40),
+                     child: Column(
+                       children: [
+                         ClipRRect(
+                           borderRadius: BorderRadius.circular(100),
+                           child: Image.asset(
+                             "assets/images/class.jpg",
+                             height: 60,
+                             width: 60,
+                           ),
                          ),
-                       ),
-                       SizedBox(height: 10,),
-                       Text("Classic",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 12,
-                       ),),
-                     ],
+                         SizedBox(
+                           height: 10,
+                         ),
+                         Text(
+                           "Classic",
+                           style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 12,
+                         ),),
+                       ],
+                     ),
                    ),
                  ),
                ],
@@ -287,350 +348,390 @@ class _Chipz_LabState extends State<Chipz_Lab> {
            Divider(
              color: Colors.black.withOpacity(0.2),
            ),
-           Padding(
-             padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
-             child: Container(
-               height: 80,
-               width: 350,
-               decoration: new BoxDecoration(
-                 borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(10.0),
-                   topLeft: Radius.circular(10.0),
-                   bottomLeft:Radius.circular(10.0),
-                   bottomRight: Radius.circular(10.0),
+           InkWell(
+             onTap: (){
+               Navigator.pushReplacement(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => Record()));
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
+               child: Container(
+                 height: 80,
+                 width: 350,
+                 decoration: new BoxDecoration(
+                   borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(10.0),
+                     topLeft: Radius.circular(10.0),
+                     bottomLeft:Radius.circular(10.0),
+                     bottomRight: Radius.circular(10.0),
+                   ),
+                   color: Colors.white,
                  ),
-                 color: Colors.white,
-               ),
-               child: Row(
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10),
-                     child: ClipRRect(
-                       borderRadius: BorderRadius.circular(100),
-                       child: Image.asset(
-                         "assets/images/dp.jpg",
-                         height: 50,
-                         width: 50,
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: ClipRRect(
+                         borderRadius: BorderRadius.circular(100),
+                         child: Image.asset(
+                           "assets/images/dp.jpg",
+                           height: 50,
+                           width: 50,
+                         ),
                        ),
                      ),
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(left:10,top: 30),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           "YoungGrizzly",
-                           style: GoogleFonts.roboto(
-                               fontSize: 8,
-                               color: Colors.black
+                     Padding(
+                       padding: const EdgeInsets.only(left:10,top: 30),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
+                             "YoungGrizzly",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 8,
+                                 color: Colors.black
+                             ),
                            ),
-                         ),
-                         SizedBox(height: 5,),
-                         Text(
-                           "NightCrawler",
-                           style: GoogleFonts.roboto(
-                               fontSize: 15,
-                               color: Colors.grey
+                           SizedBox(height: 5,),
+                           Text(
+                             "NightCrawler",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 15,
+                                 color: Colors.grey
+                             ),
                            ),
-                         ),
-                       ],
+                         ],
+                       ),
                      ),
-                   ),
-                   SizedBox(
-                     width: 80,
-                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: Text(
-                      "183bpm - tyga",style: GoogleFonts.roboto(
-                      color: Colors.black,
-                      fontSize: 14
+                     SizedBox(
+                       width: 80,
+                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Text(
+                        "183bpm - tyga",style: GoogleFonts.roboto(
+                        color: Colors.black,
+                        fontSize: 14
+                      ),
+                      ),
                     ),
-                    ),
-                  ),
-                 ],
+                   ],
+                 ),
                ),
              ),
            ),
            SizedBox(
              height: 10,
            ),
-           Padding(
-             padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
-             child: Container(
-               height: 80,
-               width: 350,
-               decoration: new BoxDecoration(
-                 borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(10.0),
-                   topLeft: Radius.circular(10.0),
-                   bottomLeft:Radius.circular(10.0),
-                   bottomRight: Radius.circular(10.0),
+           InkWell(
+             onTap: (){
+               Navigator.pushReplacement(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => Record()));
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
+               child: Container(
+                 height: 80,
+                 width: 350,
+                 decoration: new BoxDecoration(
+                   borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(10.0),
+                     topLeft: Radius.circular(10.0),
+                     bottomLeft:Radius.circular(10.0),
+                     bottomRight: Radius.circular(10.0),
+                   ),
+                   color: Colors.white,
                  ),
-                 color: Colors.white,
-               ),
-               child: Row(
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10),
-                     child: ClipRRect(
-                       borderRadius: BorderRadius.circular(100),
-                       child: Image.asset(
-                         "assets/images/p1.png",
-                         height: 50,
-                         width: 50,
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: ClipRRect(
+                         borderRadius: BorderRadius.circular(100),
+                         child: Image.asset(
+                           "assets/images/p1.png",
+                           height: 50,
+                           width: 50,
+                         ),
                        ),
                      ),
+                     Padding(
+                       padding: const EdgeInsets.only(left:10,top: 30),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
+                               "James",
+                               style: GoogleFonts.roboto(
+                                   fontSize: 8,
+                                   color: Colors.black
+                               ),
+                             ),
+                          SizedBox(height: 5,),
+                          Text(
+                               "Sorry",
+                               style: GoogleFonts.roboto(
+                                   fontSize: 15,
+                                   color: Colors.grey
+                               ),
+                             ),
+                         ],
+                       ),
+                     ),
+                     SizedBox(
+                       width: 100,
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 15),
+                       child: Text(
+                         "183bpm - gangsta",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 14
+                       ),
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+             ),
+           ),
+           SizedBox(
+             height: 10,
+           ),
+           InkWell(
+             onTap: (){
+               Navigator.pushReplacement(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => Record()));
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
+               child: Container(
+                 height: 80,
+                 width: 350,
+                 decoration: new BoxDecoration(
+                   borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(10.0),
+                     topLeft: Radius.circular(10.0),
+                     bottomLeft:Radius.circular(10.0),
+                     bottomRight: Radius.circular(10.0),
                    ),
-                   Padding(
-                     padding: const EdgeInsets.only(left:10,top: 30),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
+                   color: Colors.white,
+                 ),
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: ClipRRect(
+                         borderRadius: BorderRadius.circular(100),
+                         child: Image.asset(
+                           "assets/images/p2.jpg",
+                           height: 50,
+                           width: 50,
+                         ),
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(left:10,top: 30),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
+                             "Young",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 8,
+                                 color: Colors.black
+                             ),
+                           ),
+                           SizedBox(height: 5,),
+                           Text(
+                             "Blaze",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 15,
+                                 color: Colors.grey
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                     SizedBox(
+                       width: 138,
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 15),
+                       child: Text(
+                         "93bpm -trap",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 14
+                       ),
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+             ),
+           ),
+           SizedBox(
+             height: 10,
+           ),
+           InkWell(
+             onTap: (){
+               Navigator.pushReplacement(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => Record()));
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
+               child: Container(
+                 height: 80,
+                 width: 350,
+                 decoration: new BoxDecoration(
+                   borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(10.0),
+                     topLeft: Radius.circular(10.0),
+                     bottomLeft:Radius.circular(10.0),
+                     bottomRight: Radius.circular(10.0),
+                   ),
+                   color: Colors.white,
+                 ),
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: ClipRRect(
+                         borderRadius: BorderRadius.circular(100),
+                         child: Image.asset(
+                           "assets/images/p3.jpg",
+                           height: 50,
+                           width: 50,
+                         ),
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(left:10,top: 30),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
+                             "Mike",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 8,
+                                 color: Colors.black
+                             ),
+                           ),
+                           SizedBox(height: 5,),
+                           Text(
+                             "DayDreamer",
+                             style: GoogleFonts.roboto(
+                                 fontSize: 15,
+                                 color: Colors.grey
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                     SizedBox(
+                       width: 42,
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 15),
+                       child: Text(
+                         "183bpm - west coast",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 14
+                       ),
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+             ),
+           ),
+           SizedBox(
+             height: 10,
+           ),
+           InkWell(
+             onTap: (){
+               Navigator.pushReplacement(
+                   context,
+                   MaterialPageRoute(
+                       builder: (context) => Record()));
+             },
+             child: Padding(
+               padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
+               child: Container(
+                 height: 80,
+                 width: 350,
+                 decoration: new BoxDecoration(
+                   borderRadius: BorderRadius.only(
+                     topRight: Radius.circular(10.0),
+                     topLeft: Radius.circular(10.0),
+                     bottomLeft:Radius.circular(10.0),
+                     bottomRight: Radius.circular(10.0),
+                   ),
+                   color: Colors.white,
+                 ),
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(left: 10),
+                       child: ClipRRect(
+                         borderRadius: BorderRadius.circular(100),
+                         child: Image.asset(
+                           "assets/images/p1.png",
+                           height: 50,
+                           width: 50,
+                         ),
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(left:10,top: 30),
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(
                              "James",
                              style: GoogleFonts.roboto(
                                  fontSize: 8,
                                  color: Colors.black
                              ),
                            ),
-                        SizedBox(height: 5,),
-                        Text(
+                           SizedBox(height: 5,),
+                           Text(
                              "Sorry",
                              style: GoogleFonts.roboto(
                                  fontSize: 15,
                                  color: Colors.grey
                              ),
                            ),
-                       ],
-                     ),
-                   ),
-                   SizedBox(
-                     width: 100,
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(top: 15),
-                     child: Text(
-                       "183bpm - gangsta",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 14
-                     ),
-                     ),
-                   ),
-                 ],
-               ),
-             ),
-           ),
-           SizedBox(
-             height: 10,
-           ),
-           Padding(
-             padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
-             child: Container(
-               height: 80,
-               width: 350,
-               decoration: new BoxDecoration(
-                 borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(10.0),
-                   topLeft: Radius.circular(10.0),
-                   bottomLeft:Radius.circular(10.0),
-                   bottomRight: Radius.circular(10.0),
-                 ),
-                 color: Colors.white,
-               ),
-               child: Row(
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10),
-                     child: ClipRRect(
-                       borderRadius: BorderRadius.circular(100),
-                       child: Image.asset(
-                         "assets/images/p2.jpg",
-                         height: 50,
-                         width: 50,
+                         ],
                        ),
                      ),
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(left:10,top: 30),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           "Young",
-                           style: GoogleFonts.roboto(
-                               fontSize: 8,
-                               color: Colors.black
-                           ),
-                         ),
-                         SizedBox(height: 5,),
-                         Text(
-                           "Blaze",
-                           style: GoogleFonts.roboto(
-                               fontSize: 15,
-                               color: Colors.grey
-                           ),
-                         ),
-                       ],
+                     SizedBox(
+                       width: 77,
                      ),
-                   ),
-                   SizedBox(
-                     width: 138,
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(top: 15),
-                     child: Text(
-                       "93bpm -trap",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 14
-                     ),
-                     ),
-                   ),
-                 ],
-               ),
-             ),
-           ),
-           SizedBox(
-             height: 10,
-           ),
-           Padding(
-             padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
-             child: Container(
-               height: 80,
-               width: 350,
-               decoration: new BoxDecoration(
-                 borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(10.0),
-                   topLeft: Radius.circular(10.0),
-                   bottomLeft:Radius.circular(10.0),
-                   bottomRight: Radius.circular(10.0),
-                 ),
-                 color: Colors.white,
-               ),
-               child: Row(
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10),
-                     child: ClipRRect(
-                       borderRadius: BorderRadius.circular(100),
-                       child: Image.asset(
-                         "assets/images/p3.jpg",
-                         height: 50,
-                         width: 50,
+                     Padding(
+                       padding: const EdgeInsets.only(top: 15),
+                       child: Text(
+                         "183bpm - tyga",style: GoogleFonts.roboto(
+                           color: Colors.black,
+                           fontSize: 14
+                       ),
                        ),
                      ),
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(left:10,top: 30),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           "Mike",
-                           style: GoogleFonts.roboto(
-                               fontSize: 8,
-                               color: Colors.black
-                           ),
-                         ),
-                         SizedBox(height: 5,),
-                         Text(
-                           "DayDreamer",
-                           style: GoogleFonts.roboto(
-                               fontSize: 15,
-                               color: Colors.grey
-                           ),
-                         ),
-                       ],
-                     ),
-                   ),
-                   SizedBox(
-                     width: 42,
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(top: 15),
-                     child: Text(
-                       "183bpm - west coast",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 14
-                     ),
-                     ),
-                   ),
-                 ],
-               ),
-             ),
-           ),
-           SizedBox(
-             height: 10,
-           ),
-           Padding(
-             padding: const EdgeInsets.only(left: 10,top: 10,right: 10),
-             child: Container(
-               height: 80,
-               width: 350,
-               decoration: new BoxDecoration(
-                 borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(10.0),
-                   topLeft: Radius.circular(10.0),
-                   bottomLeft:Radius.circular(10.0),
-                   bottomRight: Radius.circular(10.0),
+                   ],
                  ),
-                 color: Colors.white,
-               ),
-               child: Row(
-                 children: [
-                   Padding(
-                     padding: const EdgeInsets.only(left: 10),
-                     child: ClipRRect(
-                       borderRadius: BorderRadius.circular(100),
-                       child: Image.asset(
-                         "assets/images/p1.png",
-                         height: 50,
-                         width: 50,
-                       ),
-                     ),
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(left:10,top: 30),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         Text(
-                           "James",
-                           style: GoogleFonts.roboto(
-                               fontSize: 8,
-                               color: Colors.black
-                           ),
-                         ),
-                         SizedBox(height: 5,),
-                         Text(
-                           "Sorry",
-                           style: GoogleFonts.roboto(
-                               fontSize: 15,
-                               color: Colors.grey
-                           ),
-                         ),
-                       ],
-                     ),
-                   ),
-                   SizedBox(
-                     width: 77,
-                   ),
-                   Padding(
-                     padding: const EdgeInsets.only(top: 15),
-                     child: Text(
-                       "183bpm - tyga",style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 14
-                     ),
-                     ),
-                   ),
-                 ],
                ),
              ),
            ),

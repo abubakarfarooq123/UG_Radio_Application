@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ug_radio_app/Home/active_contest.dart';
+import 'package:ug_radio_app/User/profile.dart';
 
 class Library extends StatefulWidget {
   const Library({Key? key}) : super(key: key);
@@ -10,32 +11,395 @@ class Library extends StatefulWidget {
 }
 
 class _LibraryState extends State<Library> {
+  bool isSearch = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Padding(
-          padding: const EdgeInsets.only(left: 70),
-          child: Text(
-            "Discover",
-            style: GoogleFonts.roboto(
-                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-        leading: IconButton(
-          icon: Icon(
-            Icons.search,
-            color: Colors.white,
-            size: 30,
-          ),
-          onPressed: () {},
-        ),
+        title: !isSearch
+            ? Padding(
+                padding: const EdgeInsets.only(left: 70),
+                child: Text(
+                  "Discover",
+                  style: GoogleFonts.roboto(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            : TextField(
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                decoration: InputDecoration(
+                  hintText: "Search",
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  fillColor: Colors.white,
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),
+                  ),
+                ),
+              ),
+        leading: isSearch
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    isSearch = false;
+                  });
+                },
+                icon: Icon(Icons.cancel_outlined),
+              )
+            : IconButton(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                onPressed: () {
+                  setState(() {
+                    this.isSearch = true;
+                  });
+                },
+              ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Container(
+                          width: 400,
+                          height: 350,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              image: DecorationImage(
+                                image:
+                                    ExactAssetImage('assets/images/shop.jpg'),
+                                fit: BoxFit.fill,
+                              )),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 40, left: 10, right: 10),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.asset(
+                                              "assets/images/coins.jpg",
+                                              height: 40,
+                                              width: 40,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 50,
+                                        ),
+                                        Text(
+                                          "100",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 70,
+                                        ),
+                                        Container(
+                                          width: 50,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 10),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "5",
+                                                  style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      "assets/images/Reddiamond.jpg"),
+                                                  radius: 10,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 10, right: 10),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.asset(
+                                              "assets/images/coins.jpg",
+                                              height: 40,
+                                              width: 40,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 50,
+                                        ),
+                                        Text(
+                                          "250",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 70,
+                                        ),
+                                        Container(
+                                          width: 50,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 10),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "10",
+                                                  style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      "assets/images/Reddiamond.jpg"),
+                                                  radius: 10,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 10, right: 10),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.asset(
+                                              "assets/images/coins.jpg",
+                                              height: 40,
+                                              width: 40,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 50,
+                                        ),
+                                        Text(
+                                          "500",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 70,
+                                        ),
+                                        Container(
+                                          width: 50,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 10),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "15",
+                                                  style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      "assets/images/Reddiamond.jpg"),
+                                                  radius: 10,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 20, left: 10, right: 10),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Container(
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 10),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.asset(
+                                              "assets/images/coins.jpg",
+                                              height: 40,
+                                              width: 40,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 50,
+                                        ),
+                                        Text(
+                                          "Free Coins",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          width: 50,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 5),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "Get",
+                                                  style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 3,
+                                                ),
+                                                CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      "assets/images/Reddiamond.jpg"),
+                                                  radius: 10,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
                 icon: Icon(
                   Icons.store,
                   color: Colors.white,
@@ -258,28 +622,46 @@ class _LibraryState extends State<Library> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Color(0xffFDCF09),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Profile()));
+                    },
                     child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage("assets/images/p3.jpg"),
+                      radius: 28,
+                      backgroundColor: Color(0xffFDCF09),
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage("assets/images/p3.jpg"),
+                      ),
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Color(0xffFDCF09),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Profile()));
+                    },
                     child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage("assets/images/p2.jpg"),
+                      radius: 28,
+                      backgroundColor: Color(0xffFDCF09),
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage("assets/images/p2.jpg"),
+                      ),
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundColor: Color(0xffFDCF09),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Profile()));
+                    },
                     child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage("assets/images/p1.png"),
+                      radius: 28,
+                      backgroundColor: Color(0xffFDCF09),
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage("assets/images/p1.png"),
+                      ),
                     ),
                   ),
                 ],

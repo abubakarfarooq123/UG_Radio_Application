@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ug_radio_app/Home/active_contest_all.dart';
 
 class Active_Contest extends StatefulWidget {
   const Active_Contest({Key? key}) : super(key: key);
@@ -12,47 +13,48 @@ class Active_Contest extends StatefulWidget {
 }
 
 class _Active_ContestState extends State<Active_Contest> {
-  String formatTime(Duration duration){
-    String twoDigits(int n) => n.toString().padLeft(2,'0');
+  String formatTime(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
     final hours = twoDigits(duration.inHours);
     final minutes = twoDigits(duration.inMinutes.remainder(60));
     final seconds = twoDigits(duration.inSeconds.remainder(60));
 
     return [
-      if(duration.inHours>0) hours,
+      if (duration.inHours > 0) hours,
       minutes,
       seconds,
     ].join(":");
   }
 
   final audioPlayer = AudioPlayer();
-  bool isPlaying =false;
-  Duration duration= Duration.zero;
-  Duration position =Duration.zero;
+  bool isPlaying = false;
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
 
   @override
   void initState() {
     super.initState();
     setAudio();
 
-    audioPlayer.onPlayerStateChanged.listen((state){
+    audioPlayer.onPlayerStateChanged.listen((state) {
       setState(() {
         isPlaying = state == PlayerState.playing;
       });
     });
-    audioPlayer.onDurationChanged.listen((newDuration){
+    audioPlayer.onDurationChanged.listen((newDuration) {
       setState(() {
-        duration=newDuration;
+        duration = newDuration;
       });
     });
 
-    audioPlayer.onPositionChanged.listen((newPosition){
+    audioPlayer.onPositionChanged.listen((newPosition) {
       setState(() {
         position = newPosition;
       });
     });
   }
-  Future setAudio() async{
+
+  Future setAudio() async {
     audioPlayer.setReleaseMode(ReleaseMode.loop);
     final player = AudioCache(prefix: "assets/sounds");
     final url = await player.load('side_to_sid.wav');
@@ -63,7 +65,6 @@ class _Active_ContestState extends State<Active_Contest> {
     // if(result !=null){
     //   final file = File(result.files.single.path!);
     //   audioPlayer.setSourceUrl(file.path, isLocal:true);
-
   }
 
   @override
@@ -110,7 +111,12 @@ class _Active_ContestState extends State<Active_Contest> {
                     ),
                     SizedBox(width: 120),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Active_ALl()));
+                      },
                       child: Text(
                         "View All >",
                         style: GoogleFonts.roboto(
@@ -123,9 +129,8 @@ class _Active_ContestState extends State<Active_Contest> {
                   ],
                 ),
               ),
-
               Padding(
-                padding: const EdgeInsets.only(left: 10,top: 10),
+                padding: const EdgeInsets.only(left: 10, top: 10),
                 child: Row(
                   children: [
                     Container(
@@ -202,17 +207,15 @@ class _Active_ContestState extends State<Active_Contest> {
                 height: 60,
               ),
               Container(
-                child:
-                Column(
-                  children:[
+                child: Column(
+                  children: [
                     Center(
                       child: Text(
                         "Candy Shop",
                         style: GoogleFonts.roboto(
                             color: Colors.black,
                             fontSize: 16,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     Center(
@@ -221,17 +224,16 @@ class _Active_ContestState extends State<Active_Contest> {
                         style: GoogleFonts.roboto(
                             color: Colors.black,
                             fontSize: 12,
-                            fontWeight: FontWeight.bold
-                        ),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20,right: 20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Slider(
                         min: 0,
                         max: duration.inSeconds.toDouble(),
                         value: position.inSeconds.toDouble(),
-                        onChanged: (value) async{
+                        onChanged: (value) async {
                           final position = Duration(seconds: value.toInt());
                           await audioPlayer.seek(position);
 
@@ -239,7 +241,8 @@ class _Active_ContestState extends State<Active_Contest> {
                         },
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 40,right: 50),
+                    Padding(
+                      padding: EdgeInsets.only(left: 40, right: 50),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -255,9 +258,7 @@ class _Active_ContestState extends State<Active_Contest> {
                         IconButton(
                           iconSize: 35,
                           color: Colors.black,
-                          onPressed: (){
-
-                          },
+                          onPressed: () {},
                           icon: Icon(
                             Icons.skip_previous,
                           ),
@@ -268,11 +269,10 @@ class _Active_ContestState extends State<Active_Contest> {
                         IconButton(
                           iconSize: 45,
                           color: Colors.black,
-                          onPressed: () async{
-                            if(isPlaying){
+                          onPressed: () async {
+                            if (isPlaying) {
                               await audioPlayer.pause();
-                            }
-                            else{
+                            } else {
                               await audioPlayer.resume();
                             }
                           },
@@ -286,9 +286,7 @@ class _Active_ContestState extends State<Active_Contest> {
                         IconButton(
                           iconSize: 35,
                           color: Colors.black,
-                          onPressed: (){
-
-                          },
+                          onPressed: () {},
                           icon: Icon(
                             Icons.skip_next,
                           ),
@@ -308,15 +306,16 @@ class _Active_ContestState extends State<Active_Contest> {
     );
   }
 }
+
 class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final redCircle = Paint()
       ..strokeWidth = 10
-      ..color = Colors.amberAccent
+      ..color = Color.fromARGB(255, 218, 162, 16)
       ..style = PaintingStyle.stroke;
     final arcRect =
-    Rect.fromCircle(center: size.bottomCenter(Offset.zero), radius: 200);
+        Rect.fromCircle(center: size.bottomCenter(Offset.zero), radius: 200);
     canvas.drawArc(arcRect, 0, -pi, false, redCircle);
   }
 
