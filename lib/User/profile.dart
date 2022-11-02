@@ -3,8 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ug_radio_app/Home/crew.dart';
+import 'package:ug_radio_app/crew/crew.dart';
 import 'package:ug_radio_app/Home/home.dart';
+import 'package:ug_radio_app/crew/list_crew.dart';
 import 'package:ug_radio_app/User/edit_profile.dart';
 import 'dart:math' as math;
 import 'dart:math';
@@ -13,6 +14,7 @@ import 'package:ug_radio_app/chat/tabpage.dart';
 import 'package:ug_radio_app/menu/settings.dart';
 import 'package:ug_radio_app/profile_menu/battles.dart';
 import 'package:ug_radio_app/profile_menu/collabas.dart';
+import 'package:ug_radio_app/profile_menu/app_store/gear.dart';
 
 import '../Home/active_contest_all.dart';
 
@@ -177,7 +179,12 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                               fontWeight: FontWeight.bold),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Crew()));
+                          },
                           icon: Icon(
                             FontAwesomeIcons.users,
                             size: 20,
@@ -200,7 +207,12 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                               fontWeight: FontWeight.bold),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Gear()));
+                          },
                           icon: Icon(
                             FontAwesomeIcons.shoePrints,
                             size: 20,
@@ -374,7 +386,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                         Stack(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 20, top: 10),
+                              padding: const EdgeInsets.only(left: 20, top: 5),
                               child: Text(
                                 "Ben Foakes",
                                 style: GoogleFonts.roboto(
@@ -407,13 +419,13 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 25, top: 35),
+                              padding: const EdgeInsets.only(left: 25, top: 37),
                               child: GestureDetector(
                                 onTap: () {
                                   Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Crew()));
+                                          builder: (context) => List_Crew()));
                                 },
                                 child: Row(
                                   children: [
@@ -436,7 +448,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Crew()));
+                                                      List_Crew()));
                                         },
                                         icon: Icon(
                                           FontAwesomeIcons.users,

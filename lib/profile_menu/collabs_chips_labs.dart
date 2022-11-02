@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ug_radio_app/Record/create_music_recording.dart';
+import 'package:ug_radio_app/Record/create_music/create_music_recording.dart';
 import 'package:ug_radio_app/Record/recording.dart';
 import 'package:ug_radio_app/Record/save.dart';
 import 'package:ug_radio_app/profile_menu/collabs_recording.dart';
@@ -21,7 +21,7 @@ class _Collabs_Chipz_LabState extends State<Collabs_Chipz_Lab> {
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(
-          "Chip'Z LAB",
+          "UG Radio Beats",
           style: GoogleFonts.roboto(color: Colors.white, fontSize: 20),
         ),
       ),

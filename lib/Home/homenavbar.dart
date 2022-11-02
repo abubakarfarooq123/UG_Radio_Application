@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ug_radio_app/Home/home.dart';
 import 'package:ug_radio_app/Library/library_home.dart';
 import 'package:ug_radio_app/Noti/notification.dart';
-import 'package:ug_radio_app/Record/create_music_chipz_lab.dart';
+import 'package:ug_radio_app/Record/create_music/create_music_chipz_lab.dart';
 import 'package:ug_radio_app/Record/mic.dart';
 import 'package:ug_radio_app/User/profile.dart';
 import 'package:ug_radio_app/record_video/record_screen.dart';

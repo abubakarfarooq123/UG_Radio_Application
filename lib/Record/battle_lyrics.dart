@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:ug_radio_app/Record/create_music_track_details.dart';
+import 'package:ug_radio_app/Record/create_music/create_music_recording.dart';
+import 'package:ug_radio_app/Record/create_music/create_music_track_details.dart';
 
-class Create_Music_Recording extends StatefulWidget {
-  const Create_Music_Recording({Key? key}) : super(key: key);
+class Battle_Lyrics extends StatefulWidget {
+  const Battle_Lyrics({Key? key}) : super(key: key);
   @override
-  State<Create_Music_Recording> createState() => _Create_Music_RecordingState();
+  State<Battle_Lyrics> createState() => _Battle_LyricsState();
 }
 
-class _Create_Music_RecordingState extends State<Create_Music_Recording> {
+class _Battle_LyricsState extends State<Battle_Lyrics> {
   bool permitpermission = false;
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
@@ -98,6 +99,7 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white70,
@@ -125,7 +127,7 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
                         topLeft: Radius.circular(10),
                         bottomLeft: Radius.circular(10),
                       ),
-                      color: permitpermission ? Colors.white : Colors.grey,
+                      color: permitpermission ? Colors.grey : Colors.white,
                     ),
                     height: 35,
                     width: 60,
@@ -135,6 +137,11 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
                         color: Colors.black,
                       ),
                       onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Create_Music_Recording()));
                         setState(() {
                           permitpermission = !permitpermission;
                         });
@@ -149,7 +156,7 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
                         topRight: Radius.circular(10),
                         bottomRight: Radius.circular(10),
                       ),
-                      color: permitpermission ? Colors.grey : Colors.white,
+                      color: permitpermission ? Colors.white : Colors.grey,
                     ),
                     height: 35,
                     width: 60,
@@ -159,6 +166,10 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
                         color: Colors.black,
                       ),
                       onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Battle_Lyrics()));
                         setState(() {
                           permitpermission = !permitpermission;
                         });
@@ -194,8 +205,83 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 5,
+            ),
+            SingleChildScrollView(
+              child: Container(
+                height: 550,
+                width: 500,
+                child: Container(
+                  height: 400,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Form(
+                          child: Padding(
+                        padding: EdgeInsets.only(left: 20, top: 20),
+                        child: TextField(
+                          maxLines: null,
+                          keyboardType: TextInputType.multiline,
+                          decoration: InputDecoration.collapsed(
+                              hintText: "Start Writing Lyrics here....."),
+                        ),
+                      )),
+                      SizedBox(
+                        height: 420,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30, right: 20),
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 60,
+                            width: 300,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.5),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.library_books,
+                                  color: Colors.black,
+                                  size: 25,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  "My Lyrics",
+                                  style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                SizedBox(
+                                  width: 100,
+                                ),
+                                Text(
+                                  "2 Drafts",
+                                  style:
+                                      GoogleFonts.roboto(color: Colors.black),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
             Padding(
-              padding: const EdgeInsets.only(top: 10, left: 15),
+              padding: const EdgeInsets.only(top: 1, left: 15),
               child: StreamBuilder<RecordingDisposition>(
                 stream: recorder.onProgress,
                 builder: (context, snapshot) {
@@ -219,13 +305,7 @@ class _Create_Music_RecordingState extends State<Create_Music_Recording> {
               ),
             ),
             SizedBox(
-              height: 5,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                height: 550,
-              ),
+              height: 9,
             ),
             Container(
               height: 80,

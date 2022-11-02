@@ -814,7 +814,7 @@ class _Music_FeedState extends State<Music_Feed> {
                   color: Color.fromARGB(255, 218, 162, 16),
                   onPressed: () {},
                   child: Text(
-                    'Register',
+                    'Send to Hot',
                     style: GoogleFonts.roboto(
                       fontSize: 17.0,
                       color: Colors.white,

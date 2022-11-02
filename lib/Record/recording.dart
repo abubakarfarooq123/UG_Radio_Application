@@ -6,6 +6,7 @@ import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:ug_radio_app/Home/track_detail.dart';
+import 'package:ug_radio_app/Record/battle_lyrics.dart';
 
 class Record extends StatefulWidget {
   const Record({Key? key}) : super(key: key);
@@ -136,6 +137,10 @@ class _RecordState extends State<Record> {
                       ),
                       onPressed: () {
                         setState(() {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Record()));
                           permitpermisson = !permitpermisson;
                         });
                       },
@@ -159,6 +164,10 @@ class _RecordState extends State<Record> {
                         color: Colors.black,
                       ),
                       onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Battle_Lyrics()));
                         setState(() {
                           permitpermisson = !permitpermisson;
                         });

@@ -6,16 +6,15 @@ import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:ug_radio_app/Record/create_music/create_music_track_details.dart';
-import 'package:ug_radio_app/profile_menu/collab_lyrics.dart';
-import 'package:ug_radio_app/profile_menu/collabs_start.dart';
+import 'package:ug_radio_app/Record/create_music/lyrics_create_music.dart';
 
-class Collabs_Recording extends StatefulWidget {
-  const Collabs_Recording({Key? key}) : super(key: key);
+class Create_Music_Recording extends StatefulWidget {
+  const Create_Music_Recording({Key? key}) : super(key: key);
   @override
-  State<Collabs_Recording> createState() => _Collabs_RecordingState();
+  State<Create_Music_Recording> createState() => _Create_Music_RecordingState();
 }
 
-class _Collabs_RecordingState extends State<Collabs_Recording> {
+class _Create_Music_RecordingState extends State<Create_Music_Recording> {
   bool permitpermission = false;
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
@@ -138,10 +137,6 @@ class _Collabs_RecordingState extends State<Collabs_Recording> {
                       ),
                       onPressed: () {
                         setState(() {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Collabs_Recording()));
                           permitpermission = !permitpermission;
                         });
                       },
@@ -165,10 +160,8 @@ class _Collabs_RecordingState extends State<Collabs_Recording> {
                         color: Colors.black,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Collab_Lyrics()));
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Lyrics()));
                         setState(() {
                           permitpermission = !permitpermission;
                         });
@@ -182,7 +175,7 @@ class _Collabs_RecordingState extends State<Collabs_Recording> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Collabs_Start()));
+                            builder: (context) => Create_Music_Track_Detail()));
                   },
                   child: Text(
                     "Next",
@@ -235,6 +228,7 @@ class _Collabs_RecordingState extends State<Collabs_Recording> {
               scrollDirection: Axis.horizontal,
               child: Container(
                 height: 550,
+                width: 500,
               ),
             ),
             Container(

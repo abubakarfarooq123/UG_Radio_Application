@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ug_radio_app/Home/home.dart';
+import 'package:ug_radio_app/User/edit_profile.dart';
+import 'package:ug_radio_app/crew/crew_chat.dart';
 import 'dart:math' as math;
 import 'dart:math';
+
+import '../menu/settings.dart';
 
 class Crew extends StatefulWidget {
   const Crew({Key? key}) : super(key: key);
@@ -136,7 +140,18 @@ class _CrewState extends State<Crew> with TickerProviderStateMixin {
                   Positioned(
                     bottom: 80,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(30),
+                              topLeft: Radius.circular(30),
+                            ),
+                          ),
+                          context: context,
+                          builder: ((builder) => dialogContent()),
+                        );
+                      },
                       icon: Icon(
                         Icons.settings,
                         size: 30,
@@ -146,29 +161,6 @@ class _CrewState extends State<Crew> with TickerProviderStateMixin {
                   ),
                   Positioned(
                     bottom: 80,
-                    left: 270,
-                    child: Row(
-                      children: [
-                        Text(
-                          "Crew",
-                          style: GoogleFonts.roboto(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            FontAwesomeIcons.users,
-                            size: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 30,
                     left: 270,
                     child: Row(
                       children: [
@@ -423,7 +415,12 @@ class _CrewState extends State<Crew> with TickerProviderStateMixin {
                           width: 90,
                         ),
                         FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Crew_Chat()));
+                          },
                           child: Container(
                             height: 50,
                             width: 100,
@@ -760,190 +757,218 @@ class _CrewState extends State<Crew> with TickerProviderStateMixin {
                                 ],
                               );
                             })),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Container(
-                      height: 200,
-                      width: 220,
-                      child: Column(
-                            children: [
-                                  Container(
-                                    width: 280,
-                                    height: 45,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(100),
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
-                                          spreadRadius: 5,
-                                          blurRadius: 7,
-                                          offset: Offset(0, 3), // changes position of shadow
-                                        ),
-                                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Container(
+                        height: 200,
+                        width: 220,
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 280,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                    offset: Offset(
+                                        0, 3), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: CircleAvatar(
+                                      radius: 18,
+                                      backgroundColor: Color(0xffFDCF09),
+                                      child: CircleAvatar(
+                                        radius: 16,
+                                        backgroundImage:
+                                            AssetImage("assets/images/p2.jpg"),
+                                      ),
                                     ),
-                                    child: Row(
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 60, top: 10),
+                                    child: Column(
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 10),
-                                          child: CircleAvatar(
-                                            radius: 18,
-                                            backgroundColor: Color(0xffFDCF09),
-                                            child: CircleAvatar(
-                                              radius: 16,
-                                              backgroundImage: AssetImage("assets/images/p2.jpg"),
-                                            ),
+                                        Text(
+                                          "Ben Fokes",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontSize: 12,
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 60,top: 10),
-                                          child: Column(
-                                            children: [
-                                              Text("Ben Fokes",style: GoogleFonts.roboto(
-                                                color: Colors.black,
-                                                fontSize: 12,
-                                              ),
-                                              ),
-                                              Text("[Creator]",style: GoogleFonts.roboto(
-                                                color: Colors.amber,
-                                                fontSize: 12,
-                                              ),
-                                              ),
-                                            ],
+                                        Text(
+                                          "[Creator]",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.amber,
+                                            fontSize: 12,
                                           ),
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 50),
-                                          child: IconButton(
-                                              onPressed: (){},
-                                              icon: Icon(
-                                                  FontAwesomeIcons.userCheck,
-                                              size: 18,
-                                              ),),
-                                        )
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 20,),
-                              Container(
-                                width: 280,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                ),
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: CircleAvatar(
-                                        radius: 18,
-                                        backgroundColor: Color(0xffFDCF09),
-                                        child: CircleAvatar(
-                                          radius: 16,
-                                          backgroundImage: AssetImage("assets/images/p1.png"),
-                                        ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        FontAwesomeIcons.userCheck,
+                                        size: 18,
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 60,top: 10),
-                                      child: Column(
-                                        children: [
-                                          Text("Klint",style: GoogleFonts.roboto(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                          ),
-                                          ),
-                                          Text("[He is alive]",style: GoogleFonts.roboto(
-                                            color: Colors.amber,
-                                            fontSize: 12,
-                                          ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 50),
-                                      child: IconButton(
-                                        onPressed: (){},
-                                        icon: Icon(
-                                          FontAwesomeIcons.userCheck,
-                                          size: 18,
-                                        ),),
-                                    )
-                                  ],
-                                ),
-                              ),
-                                  SizedBox(height: 20,),
-                              Container(
-                                width: 280,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 5,
-                                      blurRadius: 7,
-                                      offset: Offset(0, 3), // changes position of shadow
-                                    ),
-                                  ],
-                                ),
-                                child: Row(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 10),
-                                      child: CircleAvatar(
-                                        radius: 18,
-                                        backgroundColor: Color(0xffFDCF09),
-                                        child: CircleAvatar(
-                                          radius: 16,
-                                          backgroundImage: AssetImage("assets/images/p3.jpg"),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 60,top: 10),
-                                      child: Column(
-                                        children: [
-                                          Text("Benjimun",style: GoogleFonts.roboto(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                          ),
-                                          ),
-                                          Text("[Barely Verified]",style: GoogleFonts.roboto(
-                                            color: Colors.amber,
-                                            fontSize: 12,
-                                          ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 30),
-                                      child: IconButton(
-                                        onPressed: (){},
-                                        icon: Icon(
-                                          FontAwesomeIcons.userCheck,
-                                          size: 18,
-                                        ),),
-                                    )
-                                  ],
-                                ),
-                              ),
+                                  )
                                 ],
                               ),
-                          ),
-                  ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              width: 280,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                    offset: Offset(
+                                        0, 3), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: CircleAvatar(
+                                      radius: 18,
+                                      backgroundColor: Color(0xffFDCF09),
+                                      child: CircleAvatar(
+                                        radius: 16,
+                                        backgroundImage:
+                                            AssetImage("assets/images/p1.png"),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 60, top: 10),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Klint",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Text(
+                                          "[He is alive]",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.amber,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 50),
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        FontAwesomeIcons.userCheck,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              width: 280,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                    offset: Offset(
+                                        0, 3), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: CircleAvatar(
+                                      radius: 18,
+                                      backgroundColor: Color(0xffFDCF09),
+                                      child: CircleAvatar(
+                                        radius: 16,
+                                        backgroundImage:
+                                            AssetImage("assets/images/p3.jpg"),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 60, top: 10),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Benjimun",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Text(
+                                          "[Barely Verified]",
+                                          style: GoogleFonts.roboto(
+                                            color: Colors.amber,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 30),
+                                    child: IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        FontAwesomeIcons.userCheck,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -953,6 +978,167 @@ class _CrewState extends State<Crew> with TickerProviderStateMixin {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget dialogContent() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Text(
+                  "Choose one",
+                  style: GoogleFonts.roboto(color: Colors.black, fontSize: 14),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.black.withOpacity(0.2),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 5,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Edit_Profile()));
+                  },
+                  child: Container(
+                    width: 400,
+                    height: 30,
+                    child: Center(
+                      child: Text(
+                        "Edit Profile",
+                        style: GoogleFonts.roboto(
+                            color: Colors.black, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.black.withOpacity(0.2),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 5,
+                ),
+                child: InkWell(
+                  child: Container(
+                    width: 400,
+                    height: 30,
+                    child: Center(
+                      child: Text(
+                        "Share",
+                        style: GoogleFonts.roboto(
+                            color: Colors.black, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.black.withOpacity(0.2),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 5,
+                ),
+                child: InkWell(
+                  child: Container(
+                    width: 400,
+                    height: 30,
+                    child: Center(
+                      child: Text(
+                        "My Stats",
+                        style: GoogleFonts.roboto(
+                            color: Colors.black, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.black.withOpacity(0.2),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 5,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Settigs()));
+                  },
+                  child: Container(
+                    width: 400,
+                    height: 30,
+                    child: Center(
+                      child: Text(
+                        "Settings",
+                        style: GoogleFonts.roboto(
+                            color: Colors.black, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                color: Colors.black.withOpacity(0.2),
+              ),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 30),
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                height: 45,
+                width: 330,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey.withOpacity(0.2),
+                ),
+                child: Center(
+                  child: Text(
+                    "Cancel",
+                    style:
+                        GoogleFonts.roboto(color: Colors.black, fontSize: 14),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

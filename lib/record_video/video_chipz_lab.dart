@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ug_radio_app/Record/recording.dart';
 import 'package:ug_radio_app/Record/save.dart';
+import 'package:ug_radio_app/record_video/wave_video_record.dart';
 
-class Chipz_Lab extends StatefulWidget {
-  const Chipz_Lab({Key? key}) : super(key: key);
+class Video_Chipz_Lab extends StatefulWidget {
+  const Video_Chipz_Lab({Key? key}) : super(key: key);
 
   @override
-  State<Chipz_Lab> createState() => _Chipz_LabState();
+  State<Video_Chipz_Lab> createState() => _Video_Chipz_LabState();
 }
 
-class _Chipz_LabState extends State<Chipz_Lab> {
+class _Video_Chipz_LabState extends State<Video_Chipz_Lab> {
   bool pressAttention = false;
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(
-          "UG Radio Beats",
-          style: GoogleFonts.roboto(
-            color: Colors.white,
-            fontSize: 20,
-          ),
+          "Chip'Z LAB",
+          style: GoogleFonts.roboto(color: Colors.white, fontSize: 20),
         ),
       ),
       body: SingleChildScrollView(
@@ -43,7 +40,7 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Chipz_Lab()));
+                                builder: (context) => Video_Chipz_Lab()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -143,8 +140,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 20),
@@ -174,8 +173,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 30),
@@ -205,8 +206,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 40),
@@ -236,8 +239,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 40),
@@ -267,8 +272,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 40),
@@ -298,8 +305,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 40),
@@ -329,8 +338,10 @@ class _Chipz_LabState extends State<Chipz_Lab> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Record()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Wave_Video()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10, left: 40),
@@ -369,8 +380,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Record()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Wave_Video()));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -442,8 +453,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Record()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Wave_Video()));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -515,8 +526,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Record()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Wave_Video()));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -588,8 +599,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Record()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Wave_Video()));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, right: 10),
@@ -661,8 +672,8 @@ class _Chipz_LabState extends State<Chipz_Lab> {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Record()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Wave_Video()));
               },
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, top: 10, right: 10),

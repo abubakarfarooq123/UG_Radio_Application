@@ -1,18 +1,18 @@
 import 'dart:math';
+
 import 'package:audioplayers/audioplayers.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ug_radio_app/record_video/video_chipz_lab.dart';
 
-class Radio_Home extends StatefulWidget {
-  const Radio_Home({Key? key}) : super(key: key);
+class Wave_Video extends StatefulWidget {
+  const Wave_Video({Key? key}) : super(key: key);
 
   @override
-  State<Radio_Home> createState() => _Radio_HomeState();
+  State<Wave_Video> createState() => _Wave_VideoState();
 }
 
-class _Radio_HomeState extends State<Radio_Home> {
+class _Wave_VideoState extends State<Wave_Video> {
   String formatTime(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, '0');
     final hours = twoDigits(duration.inHours);
@@ -73,113 +73,77 @@ class _Radio_HomeState extends State<Radio_Home> {
     super.dispose();
   }
 
-  List<String> _images = [
-    "candy.jpg",
-    "car.jpg",
-    "enum.jpg",
-    "Gangsta.jpg",
-    "money.jpg",
-    "bella_chao.jpg",
-  ];
-  List images = [
-    "candy.jpg",
-    "car.jpg",
-    "enum.jpg",
-  ];
-
-  List images1 = [
-    "Gangsta.jpg",
-    "money.jpg",
-    "bella_chao.jpg",
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      appBar: AppBar(
+        backgroundColor: Colors.white60,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_sharp,
+            size: 20,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          "Audio",
+          style: GoogleFonts.roboto(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+      ),
+      body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 70,
+            ),
             Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/i.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Container(
-                height: 390,
-                width: 400,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        colorFilter: new ColorFilter.mode(
-                            Colors.black.withOpacity(0.5), BlendMode.dstATop),
-                        image: AssetImage("assets/images/bonfire.jpg"),
-                        fit: BoxFit.cover)),
-                child: Center(
-                  child: CarouselSlider(
-                    items: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/candy.jpg'),
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/bella_chao.jpg'),
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/money.jpg'),
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                      ),
-                    ],
-                    options: CarouselOptions(
-                      aspectRatio: 1 / 0.8,
-                      viewportFraction: 0.7,
-                      reverse: true,
-                      pageSnapping: true,
-                      enlargeCenterPage: true,
-                    ),
-                  ),
+              height: 200,
+              width: 350,
+              child: Image(
+                image: AssetImage(
+                  "assets/images/candy.jpg",
                 ),
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 130,
             ),
             Center(
               child: Text(
-                "Candy Shop",
+                "Candy Shope",
                 style: GoogleFonts.roboto(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Center(
               child: Text(
                 "50 Cent",
                 style: GoogleFonts.roboto(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.black,
+                  fontSize: 15,
+                ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Slider(
+                activeColor: Colors.grey,
+                inactiveColor: Colors.black,
                 min: 0,
                 max: duration.inSeconds.toDouble(),
                 value: position.inSeconds.toDouble(),
@@ -197,11 +161,13 @@ class _Radio_HomeState extends State<Radio_Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    formatTime(
-                      position,
-                    ),
+                    formatTime(position),
+                    style: GoogleFonts.roboto(color: Colors.black),
                   ),
-                  Text(formatTime(duration - position)),
+                  Text(
+                    formatTime(duration - position),
+                    style: GoogleFonts.roboto(color: Colors.black),
+                  ),
                 ],
               ),
             ),
@@ -247,11 +213,52 @@ class _Radio_HomeState extends State<Radio_Home> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 15,
-            ),
             CustomPaint(
               painter: MyPainter(),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Container(
+              height: 70,
+              width: 400,
+              color: Colors.grey.withOpacity(0.5),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Video_Chipz_Lab()));
+                      },
+                      child: Text(
+                        "Choose an other one",
+                        style: GoogleFonts.roboto(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 140,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Colors.black,
+                        size: 35,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
